@@ -51,7 +51,7 @@ app.use(express.static(__dirname));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'blogs.html'))
+    res.sendFile(path.join(__dirname,'index.html'))
  });
  app.get('/signup',(req,res)=>{
     res.render('register',{error:null});
