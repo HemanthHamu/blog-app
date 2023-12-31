@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification</title>
+    <style>
+        body {
+            background-color: #d2e3c8;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            margin: 200px auto;
+            background-color: #39553c;
+            color: #d2e3c8;
+            padding: 40px;
+            border-radius: 10px;
+            z-index: 1;
+            transition: filter 0.3s ease; 
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            gap: 20px;
+        }
+
+        .container label {
+            font-size: 20px;
+        }
+
+        .container input {
+            border: none;
+            border-bottom: 2px solid #537a57;
+            outline: none;
+            padding: 8px;
+            background-color: #39553c;
+            color: #d2e3c8;
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        input:focus {
+            border-bottom: 3px solid #7ab180;
+        }
+
+        ::placeholder {
+            font-size: 18px;
+            color: #fff;
+            opacity: 0.2;
+        }
+
+        .container button {
+            padding: 8px;
+            background-color: #537a57;
+            border: none;
+            font-size: 19px;
+            color: #d2e3c8;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: #4a6b4d;
+        }
+
+        .blur {
+            filter: blur(3px); 
+            pointer-events: none; 
+        }
+
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent; 
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        #parent {
+            display: flex;
+            gap: 30px;
+            line-height: 50px;
+        }
+
+        .children {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(10deg, black, #7d0a0a);
+            color: #bff89d;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 50%;
+            font-weight: bolder;
+            text-align: center;
+            animation: roll 3s alternate infinite;
+            font-size: 20px;
+        }
+
+        @keyframes roll {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .children:nth-child(1){
+          animation-delay: 0s;
+        }
+        .children:nth-child(2){
+          animation-delay: 0.2s;
+        }
+        .children:nth-child(3){
+          animation-delay: 0.4s;
+        }
+        .children:nth-child(4){
+          animation-delay: 0.6s;
+        }
+        .children:nth-child(5){
+          animation-delay: 0.8s;
+        }
+        .children:nth-child(6){
+          animation-delay: 1s;
+        }
+        .children:nth-child(7){
+          animation-delay: 1.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container <% if (typeof message !== 'undefined' && message) { %> blur <% } %>">
+        <h1>OTP Verification</h1>
+        <form action="/verify" method="post">
+            <label for="otp">Enter OTP:</label>
+            <input
+                type="text"
+                id="otp"
+                name="otp"
+                placeholder="Enter your 4 digit otp"
+                required
+            />
+            <input type="hidden" name="email" value="<%= email %>" />
+            <% if (typeof error !== 'undefined' && error) { %>
+                <p
+                    style="
+                    background-color: #052609;
+                    color: red;
+                    margin-top: 10px;
+                    padding: 10px;
+                    "
+                >
+                    <%= error %>
+                </p>
+            <% }%> 
+            <% if (typeof email !== 'undefined') { %>
+                <p style="background-color: #000"></p>
+                <button type="submit">Verify OTP</button>
+            </form>
+        </div>
+        <% } %> 
+        <% if (typeof message !== 'undefined' && message) { %>
+            <div id="loading-overlay">
+                <div id="parent">
+                    <div class="children">L</div>
+                    <div class="children">O</div>
+                    <div class="children">A</div>
+                    <div class="children">D</div>
+                    <div class="children">I</div>
+                    <div class="children">N</div>
+                    <div class="children">G</div>
+                </div>
+            </div>
+            <script>
+                document.querySelector('.container').classList.add('blur');
+                document.getElementById('loading-overlay').style.display = 'flex';
+                setTimeout(() => {
+                    window.location.href = '/homepage.html';
+                }, 5000); 
+            </script>
+        <% } %>
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification</title>
+    <style>
+      body {
+        background-color: #d2e3c8;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .container {
+        width: 400px;
+        margin: 200px auto;
+        background-color: #39553c;
+        color: #d2e3c8;
+        padding: 40px;
+        border-radius: 10px;
+        z-index: 1;
+      }
+      .container h1 {
+        text-align: center;
+      }
+      .container form {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 20px;
+      }
+      .container label {
+        font-size: 20px;
+      }
+      .container input {
+        border: none;
+        border-bottom: 2px solid #537a57;
+        outline: none;
+        padding: 8px;
+        background-color: #39553c;
+        color: #d2e3c8;
+        font-size: 21px;
+        margin-bottom: 30px;
+      }
+      input:focus {
+        border-bottom: 3px solid #7ab180;
+      }
+      ::placeholder {
+        font-size: 18px;
+        color: #fff;
+        opacity: 0.2;
+      }
+      .container button {
+        padding: 8px;
+        background-color: #537a57;
+        border: none;
+        font-size: 19px;
+        color: #d2e3c8;
+        border-radius: 10px;
+      }
+      button:hover {
+        background-color: #4a6b4d;
+      }
+      body {
+        background-color: #d2e3c8;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      #parent {
+        position: fixed;
+        top: 50%;
+        left: 25%;
+        display: none;
+        gap: 30px;
+        line-height: 50px;
+        z-index: 999;
+      }
+      .children {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(10deg, black, #7d0a0a);
+        color: #bff89d;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 50%;
+        font-weight: bolder;
+        text-align: center;
+        animation: roll 3s alternate infinite;
+        font-size: 20px;
+      }
+      @keyframes roll {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.5);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .children:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .children:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .children:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      .children:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+      .children:nth-child(5) {
+        animation-delay: 0.8s;
+      }
+      .children:nth-child(6) {
+        animation-delay: 1s;
+      }
+      .children:nth-child(7) {
+        animation-delay: 1.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>OTP Verification</h1>
+      <form action="/verify" method="post">
+        <label for="otp">Enter OTP:</label>
+        <input
+          type="text"
+          id="otp"
+          name="otp"
+          placeholder="Enter your 4 digit otp"
+          required
+        />
+        <input type="hidden" name="email" value="<%= email %>" />
+        <% if (typeof error !== 'undefined' && error) { %>
+        <p
+          style="
+            background-color: #052609;
+            color: red;
+            margin-top: 10px;
+            padding: 10px;
+          "
+        >
+          <%= error %>
+        </p>
+        <% }%> <% if (typeof email !== 'undefined') { %>
+        <p style="background-color: #000"></p>
+        <button type="submit">Verify OTP</button>
+      </form>
+    </div>
+        <% } %> <% if (typeof message !== 'undefined' && message) { %>
+          <p><%= message %></p>
+          <div id="loading-overlay">
+              <div id="parent">
+                  <div class="children">L</div>
+                  <div class="children">O</div>
+                  <div class="children">A</div>
+                  <div class="children">D</div>
+                  <div class="children">I</div>
+                  <div class="children">N</div>
+                  <div class="children">G</div>
+              </div>
+          </div>
+      <script>
+        // Redirect to homepage.html after 2 seconds
+        document.getElementById('parent').style.display = 'flex';
+        setTimeout(() => {
+          window.location.href = "/homepage.html";
+        }, 4000); // Adjust the delay as needed (in milliseconds)
+      </script>
+      <% } %>
+  </body>
+</html> -->

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <style>
+      body{
+      background-color: #D2E3C8;
+      background-color: #233224;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .container{
+        max-width: 100%;
+        width: 30%;
+        margin: 150px auto;
+        background-color: #324934;
+        color: #D2E3C8;
+        padding: 40px;
+        border-radius: 10px;
+    }
+    .container h1{
+        text-align: center;
+    }
+    .container form{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 20px;
+    }
+    .container label{
+      font-size: 20px;
+    }
+    .container input{
+        border: none;
+        border-bottom: 2px solid #537a57;
+        outline: none;
+        padding: 8px;
+        background-color: #324934;
+        color:#D2E3C8;
+        font-size: 21px;
+        margin-bottom: 30px;
+    }
+    input:focus{
+      border-bottom: 3.5px solid #7ab180;
+    }
+    ::placeholder{
+      font-size: 18px;
+      color: #fff;
+      opacity: 0.2;
+    }
+    .container a{
+      margin-top: -39px;
+      text-decoration: none;
+      color: #D2E3C8;
+    }
+    .container button{
+      padding: 8px;
+      background-color: #537a57;
+      border: none;
+      font-size: 19px;
+      color: #D2E3C8;
+      border-radius: 10px;
+    }
+    button:hover{
+      background-color: #4a6b4d;
+    }
+    @media (max-width:768px){
+      .container{
+        max-width: 100%;
+        width: 80%;
+      }
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login Form</h1>
+    <form action="/login" method="post">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      <a href="/signup">don't have an account? sign up </a>
+      <button type="submit">Login</button>
+<% if (typeof error !== 'undefined' && error) { %>
+  <p style="background-color: #052609; color: red; margin-top: 10px; padding: 10px;"><%= error %></p>
+<% } else if (typeof message !== 'undefined' && message) { %>
+  <p style="background-color: #052609; color: green; margin-top: 10px; padding: 10px;"><%= message %></p>
+<% } %>
+    </form>
+  </div>
+</body>
+</html>

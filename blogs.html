@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="blogs.css">
+  <script src="https://kit.fontawesome.com/2300780027.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="bar-image" onclick="toggleMobileLinks()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <nav class="desktop-links">
+    <a href="#">Home</a>
+    <a href="#about-us-container">About Us</a>
+    <a href="#social-media">Contact Us</a>
+    <a href="/signup" class="logout">Signup / Login</a>
+  </nav>
+
+  <nav class="mobile-links">
+    <a href="#">Home</a>
+    <a href="#about-us-container">About Us</a>
+    <a href="#social-media">Contact Us</a>
+    <a href="/signup" class="logout">Signup/Login</a>
+  </nav>
+  <h1>My Blogs</h1><hr>
+  <div class="container">
+        <div class="child">
+              <h1>What is node js?</h1>
+              <p>Node.js is a JavaScript runtime environment that is open-source and cross-platform, enabling the execution of JavaScript code outside the confines of a web browser. It allows developers to use JavaScript to write server-side scripts, enabling the development of scalable and high-performance web applications. Node.js is built on the V8 JavaScript runtime engine, which is developed by Google for use in the Chrome browser.
+              Key features of Node.js include:     
+                Non-blocking, Event-Driven Architecture: Node.js is designed to be non-blocking and event-driven, making it well-suited for handling concurrent connections and building scalable applications. It uses an event loop to efficiently manage I/O operations.<br><br><br>
+                </p><br><br>
+                <p class="date"></p>
+        </div>
+       <div class="child">
+            <h1>What is mongoDB?</h1>
+            <p>
+              MongoDB is a type of database that stores information in a flexible, JSON-like format. 
+              It's good for handling lots of data and can adapt to changing structures. 
+              Unlike traditional databases, it doesn't require a fixed plan for how data should look. 
+              MongoDB is fast, can grow easily, and copies data across servers for reliability.
+            </p>
+            <h1>How to connect mongoDB to JavaScript?</h1>
+            <p>
+              To connect mongoDB to JavaScript we have to use a package called mongoose.<br><br>
+                Mongoose acts as a go-between, connecting your code with MongoDB through a well-organized JavaScript library. It serves as a translator,
+              streamlining the interaction with databases and improving the ease of managing data.
+            </p>
+            <h1>Difference between mongoDB and mongoose</h1>
+            <p>mongoDB is a database where you can see the data that is collected from various sources like login form,registration form etc..<br><br>
+            mongoose is used to <strong>design the database</strong> in the way you want.
+            </p><br><br>
+            <p class="date"></p>
+        </div>
+</div>
+
+<div id="about-us-container">
+<h1>About us</h1>
+    <div class="about-us-child">
+        <div class="grand-child">
+          <u><h2>Who We Are</h2></u>
+          <p>Welcome to Simple Blog! We are a passionate team of writers and enthusiasts
+            dedicated to sharing knowledge and insights on a variety of topics.</p>
+        </div>
+        <div class="grand-child">
+          <u><h2>Our Mission</h2></u>
+          <p>Our mission is to provide valuable and informative content to our readers. Whether you're a tech enthusiast, a foodie, or someone interested in a wide range of topics, 
+            we strive to offer engaging articles that cater to diverse interests.</p>
+        </div>
+        <div class="grand-child">
+          <u><h2>What We Cover</h2></u>
+          <p>From technology trends and programming tips to travel adventures and lifestyle advice, our blog covers a wide spectrum of topics. 
+            We believe in making information accessible and enjoyable for everyone.</p>
+        </div>
+        <div class="grand-child">
+          <u><h2>What Sets Us Apart</h2></u>
+          <p>Our blog transcends boundaries, delving into diverse subjects that captivate our interests. From the latest tech innovations to the nuances of travel,
+            we strive to deliver captivating stories and insights that resonate with you.</p>
+        </div>
+    </div>
+</div>
+<hr>
+  <div class="social-media" id="social-media">
+    <a href="https://www.linkedin.com/in/hemanth586/"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/_hemanth_virat_28?igshid=OGQ5ZDc2ODk2ZA== "><i class="fa-brands fa-instagram"></i></a>
+    <a href="mailto:sahukarihemanth586@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://youtube.com/@hemanth8336?si=3q8D3Gn-BeuOVpPh"><i class="fa-brands fa-youtube"></i></a>
+</div><hr>
+  <script>
+  const d = new Date();
+  const dateString = `Posted on: 25-12-2023`;
+  document.querySelectorAll('.date').forEach((element)=> {
+    element.innerHTML = dateString;
+  });
+  function toggleMobileLinks() {
+      var mobileLinks = document.querySelector('.mobile-links');
+      mobileLinks.style.display = (mobileLinks.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#050634;
+}
+
+nav {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    font-family: Arial,sans-serif;
+  }
+
+  nav a {
+    font-size: 22px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+  }
+
+  nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  nav .logout{
+    background:linear-gradient(10deg,#F44776,#FE624E);
+    padding: 10px;
+    border-radius: 7px;
+  }
+  nav .logout:hover{
+    background-color: #561108;
+    color: #fff;
+  }
+
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px auto;
+    max-width: 100%;
+    width: 70%;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .container h1{
+    text-align: center;
+    color: #e85e83;
+  }
+  .container #postContent{
+    padding: 10px;
+    max-width: 100%;
+    width: 62%;
+    color: #fff;
+    background-color: #06083e;
+    box-shadow: 0 0 1px #fff;
+    border-radius: 10px;
+    outline: none;
+    font-size: 18px;
+    border: none;
+    margin: auto;
+    height: 180px;
+  }
+  .container #no-content{
+    color: red;
+    background-color: white;
+    font-size: 20px;
+    padding: 5px;
+    margin:auto;
+    width: 60%;
+    display: none;
+  }
+  .container button{
+    max-width: 100%;
+    width: 62%;
+    margin: auto;
+    font-size: 25px;
+    background:linear-gradient(10deg,#F44776,#FE624E);
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+    font-family: Arial,sans-serif;
+  }
+
+  .container button:hover {
+    background:linear-gradient(10deg,#93193a,#b83827);
+  }
+
+  .post {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 20px 50px ;
+    border: 1px solid white;
+    padding: 15px;
+    background-color: #140e3e;
+    background-color: #090a51;
+    color: #fff;
+    max-width: 100%;
+    width: 50%;
+    border-radius: 8px;
+    word-break: break-all;
+  }
+  .post-date {
+    margin-top: 10px;
+    font-size: 17px;
+    background: transparent;
+    margin-bottom: 10px;
+  }
+  button{
+    max-width: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background:linear-gradient(10deg,#F44776,#FE624E);
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+  }
+  button:hover{
+    background:linear-gradient(10deg,#93193a,#b83827);
+  }
+  #about-us-container{
+    max-width: 100%;
+    width: 90%;
+    margin: 30px auto;
+    margin-bottom: 50px;
+    box-shadow: 0 0 4px #fff ;
+    background-color: #050635;
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+  }
+  #about-us-container h1{
+    text-align: center;
+    color: #f47698;
+  }
+  #about-us-container .about-us-child{
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px 90px;
+    margin: auto;
+  }
+  .about-us-child .grand-child{
+    width: 25%;
+  }
+  .grand-child h2{
+    color: #f57597;
+  }
+
+  .social-media{
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent;
+    padding: 15px;
+}
+.social-media a{
+    text-decoration: none;
+    color: #fff;
+}
+.social-media i {
+    font-size: 30px;
+    background-color: #1f23a9;
+    padding: 20px;
+    border-radius: 50%;
+}
+.social-media i:hover{
+    background-color: #12179e;
+}
+
+@media (max-width:768px){
+  nav{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+  }
+  .container{
+    max-width: 100%;
+    width: 90%;
+    margin: auto;
+  }
+  .container #postContent{
+      max-width: 100%;
+      width: 90%;
+  }
+  .container button{
+    max-width: 100%;
+    width: 90%;
+  }
+  #about-us-container{
+    max-width: 100%;
+    width: 90%;
+    margin-bottom: 50px;
+    box-shadow: 0 0 4px #fff ;
+    background-color: #050635;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+  }
+  #about-us-container h1{
+    text-align: center;
+    color: #f47698;
+  }
+  #about-us-container .about-us-child{
+    max-width: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .about-us-child .grand-child{
+    max-width: 100%;
+    width: 35%;
+  }
+
+}

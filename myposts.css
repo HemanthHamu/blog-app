@@ -1,0 +1,65 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #EEF5FF;
+  }
+  header{
+    margin-bottom: 50px;
+  }
+  h1{
+    text-align: center;
+    background-color: #1e3c72;
+    padding: 20px;
+  }
+  .no-posts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #000;
+  }
+  .post {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 25px;
+    border: none;
+    box-shadow: 0 0 2px #0d0d0d;
+    padding: 25px;
+    color: #000;
+    border-radius: 8px;
+    max-width: 100%;
+    width: 50%;
+    font-size: 20px;
+    justify-content: start;
+    word-break: break-all;
+  }
+
+  .post-date {
+    margin-top: 10px;
+    font-size: 17px;
+    background: transparent;
+    margin-bottom: 10px;
+  }
+  button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #2d65b2;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+  }
+  button:hover{
+    background-color:  #294882;
+  }
+
+  @media (max-width:768px){
+    .post{
+      max-width: 100%;
+      width: 85%;
+      margin: auto;
+    }
+
+  }
