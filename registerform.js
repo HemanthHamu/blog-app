@@ -8,7 +8,8 @@ const path = require('path');
 const ejs = require('ejs')
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/userAccounts');
+const atlas = 'mongodb+srv://hemanthsahukari28:upk7JGFlpdqbsX4E@cluster0.s2yji1u.mongodb.net/firstDatabase'
+mongoose.connect(atlas);
 mongoose.connection.on('connected', () => {
     console.log('mongoDB connection successful');
 });
