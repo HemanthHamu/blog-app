@@ -1,11 +1,9 @@
-# netlify.toml
+
+[build]
+  command = "npm run build"  # Update with your actual build command
+  publish = "./views"        # Update based on your project structure
 
 [[redirects]]
   from = "/*"
-  to = "/views/:splat"
+  to = "/index.html"
   status = 200
-
-[build]
-  command = "npm run build"
-  publish = "./views"
-
