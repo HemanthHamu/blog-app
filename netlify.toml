@@ -3,5 +3,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/views/register.ejs"
+  to = "/views/"
   status = 200
