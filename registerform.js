@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const app = express();
 const bcrypt = require('bcrypt')
 const port = 3013;
-const path = require('path')
+const path = require('path');
+const ejs = require('ejs')
 
 // Connect to MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/userAccounts');
@@ -55,7 +56,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'index.html'))
  });
  app.get('/signup',(req,res)=>{
-    res.render('register',{error:null});
+    ejs.renderFile('register',{error:null})
  });
 
  app.post('/submit', async (req, res) => {
