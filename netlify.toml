@@ -1,8 +1,7 @@
-     
-
 [build]
-command = "npm run build"  # Adjust this based on your build command
-publish = "dist"  # Adjust this based on your output directory
+  publish = "./"      
 
-[dev]
-command = "npm run start"  # Adjust this based on your development server command
+[[redirects]]
+  from = "/*"
+  to = "/register.ejs"
+  status = 200
