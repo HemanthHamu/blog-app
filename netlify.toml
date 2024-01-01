@@ -1,2 +1,8 @@
 [build]
   publish = "./"      
+
+# Example: if EJS files are in the 'views' folder
+[[redirects]]
+from = "/*"
+to = "/views/:splat"
+status = 200
