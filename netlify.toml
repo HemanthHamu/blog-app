@@ -3,5 +3,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/views/"
+  to = "/views"
   status = 200
