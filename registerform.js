@@ -56,8 +56,8 @@ app.get('/', (req, res) => {
  });
  app.get('/signup',(req,res)=>{
     // res.render('register',{error:null});
-    res.send('<h1>signup page</h1>')
- })
+    res.sendFile(path.join(__dirname,'views','register.ejs'));
+ });
 
  app.post('/submit', async (req, res) => {
     const {email,password,confirmpassword} = req.body;
