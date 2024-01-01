@@ -55,8 +55,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'index.html'))
  });
  app.get('/signup',(req,res)=>{
-    // res.render('register',{error:null});
-    res.sendFile(path.join(__dirname,'views','register.ejs'));
+    return res.render('register',{error:null});
  });
 
  app.post('/submit', async (req, res) => {
