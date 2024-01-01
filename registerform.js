@@ -9,7 +9,11 @@ const ejs = require('ejs')
 
 // Connect to MongoDB
 const atlas = 'mongodb+srv://hemanthsahukari28:TSLBl2EJ7TeER0ye@cluster0.s2yji1u.mongodb.net/firstDatabase?retryWrites=true&w=majority'
-mongoose.connect(atlas);
+mongoose.connect(atlas, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  
 mongoose.connection.on('connected', () => {
     console.log('mongoDB connection successful');
 });
