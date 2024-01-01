@@ -159,6 +159,10 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.use((req, res) => {
+    res.status(404).send('Page not found');
+});
+
 // Start the server at port 3013 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
