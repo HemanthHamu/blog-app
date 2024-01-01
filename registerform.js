@@ -45,7 +45,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // for serving static files (e.g., HTML, CSS)
-app.use(express.static(__dirname));
+// app.use(express.static(__dirname));
 
 // Set the view engine to EJS because we need to render dynamic content
 app.set('view engine', 'ejs');
@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
  });
  app.get('/signup',(req,res)=>{
     // res.render('register',{error:null});
-    res.send('signup page')
+    res.send('<h1>signup page</h1>')
  })
 
  app.post('/submit', async (req, res) => {
