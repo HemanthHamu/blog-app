@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     textElement.style.borderRadius = '10px'
     textElement.style.padding = '10px'
     textElement.textContent = post.content; 
+    textElement.style.marginBottom = "10px"
   
     var dateElement = document.createElement('div');
     dateElement.className = 'post-date';
