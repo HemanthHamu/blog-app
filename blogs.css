@@ -127,6 +127,45 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .bar-image {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    font-size: 30px;
+  }
+  .desktop-links {
+    display: none; 
+  }
+  .mobile-links {
+    display: none; 
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: #333;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 20px;
+  }
+  .mobile-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+  .mobile-links a:hover{
+    background-color: #ddd;
+    color: #333;
+  }
+  .mobile-links .logout{
+    background: linear-gradient(10deg, #F44776, #FE624E);
+    padding: 10px;
+    border-radius: 7px;
+  }
   .container {
     max-width: 100%;
     width: 95%;
@@ -160,47 +199,5 @@ h1 {
   .about-us-child .grand-child {
     max-width: 100%;
     width: 35%;
-  }
-
-  .bar-image {
-    display: block; 
-    cursor: pointer;
-    position: fixed;
-    top: 30px;
-    right: 10px;
-    font-size: 30px;
-  }
-
-  .desktop-links {
-    display: none; 
-  }
-
-  .mobile-links {
-    display: none; 
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    background-color: #333;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    padding: 20px;
-  }
-  .mobile-links a {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 20px;
-  }
-  .mobile-links a:hover{
-    background-color: #ddd;
-    color: #333;
-  }
-  .mobile-links .logout{
-    background: linear-gradient(10deg, #F44776, #FE624E);
-    padding: 10px;
-    border-radius: 7px;
   }
 }
