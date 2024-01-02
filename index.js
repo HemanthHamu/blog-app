@@ -6,14 +6,13 @@ const bcrypt = require('bcrypt')
 const port = 3013;
 const path = require('path');
 
-const url = `mongodb+srv://hemanthsahukari28:Hamu100@@cluster0.s2yji1u.mongodb.net/?retryWrites=true&w=majority`;
+const dburl = "mongodb+srv://Hemanth:Hamu100@cluster0.s2yji1u.mongodb.net/firstDatabase?retryWrites=true&w=majority";
 
 const connectionParams={
     useNewUrlParser: true,
-    useCreateIndex: true,
     useUnifiedTopology: true 
 }
-mongoose.connect(url,connectionParams)
+mongoose.connect(dburl,connectionParams)
     .then( () => {
         console.log('Connected to the database ')
     })

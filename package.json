@@ -2,9 +2,9 @@
   "name": "mongodb",
   "version": "1.0.0",
   "description": "",
-  "main": "registerform.js",
+  "main": "index.js",
   "scripts": {
-    "start":"node registerform.js"
+    "start":"node index.js"
   },
   "keywords": [],
   "author": "",
