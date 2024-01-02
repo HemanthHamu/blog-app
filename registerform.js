@@ -5,22 +5,21 @@ const app = express();
 const bcrypt = require('bcrypt')
 const port = 3013;
 const path = require('path');
-const ejs = require('ejs')
 
-// Connect to MongoDB
-const atlas = 'mongodb+srv://hemanthsahukari28:TSLBl2EJ7TeER0ye@cluster0.s2yji1u.mongodb.net/firstDatabase?retryWrites=true&w=majority'
-mongoose.connect(atlas, {
+const url = `mongodb+srv://hemanthsahukari28:Hamu100@@cluster0.s2yji1u.mongodb.net/?retryWrites=true&w=majority`;
+
+const connectionParams={
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  
-mongoose.connection.on('connected', () => {
-    console.log('mongoDB connection successful');
-});
-
-mongoose.connection.on('error', (err) => {
-    console.error('MongoDB connection error:', err);
-});
+    useCreateIndex: true,
+    useUnifiedTopology: true 
+}
+mongoose.connect(url,connectionParams)
+    .then( () => {
+        console.log('Connected to the database ')
+    })
+    .catch( (err) => {
+        console.error(`Error connecting to the database. n${err}`);
+    })
 
 // Mongoose model for the users collection
 const OtpModel = mongoose.model('Users', {
@@ -61,7 +60,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'index.html'))
  });
  app.get('/signup',(req,res)=>{
-    ejs.renderFile('register',{error:null})
+    res.render('register',{error:null})
  });
 
  app.post('/submit', async (req, res) => {
