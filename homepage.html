@@ -6,6 +6,59 @@
   <title>Simple Blog</title>
   <link rel="stylesheet" href="homepage.css">
   <script src="https://kit.fontawesome.com/2300780027.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .logout {
+      float: right;
+    }
+    
+    .fa-bars{
+      font-size:25px;
+      position: absolute;
+      top:25px;
+      right:10px; 
+      color: #fff;
+    }
+
+    .bar-icon {
+      display: none;
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 768px) {
+      nav a:not(:last-child) {
+        display: none;
+      }
+
+      .logout {
+        float: none;
+        display: block;
+        text-align: center;
+      }
+
+      .bar-icon {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -14,51 +67,55 @@
     <a href="#social-media">Contact Us</a>
     <a href="myposts.html">My Posts</a>
     <a href="/" class="logout">Logout</a>
+    <div class="bar-icon" onclick="toggleNav()">
+      <i class="fas fa-bars"></i>
+    </div>
   </nav>
 
-    <div class="container">
-      <h1>Create a New Post</h1>
-      <textarea id="postContent" rows="4" cols="50" placeholder="What's on your mind..."></textarea>
-      <br>
-      <p id="no-content"></p>
-      <button onclick="publishPost()">Publish</button>
-    </div>
-    
-    <div id="posts">
-      <!-- Display posts dynamically here -->
-    </div>
-    
-<div id="about-us-container">
-  <h1>About us</h1><hr>
-      <div class="about-us-child">
-          <div class="grand-child">
-            <u><h2>Who We Are</h2></u>
-            <p>Welcome to Simple Blog! We are a passionate team of writers and enthusiasts
-              dedicated to sharing knowledge and insights on a variety of topics.</p>
-          </div>
-          <div class="grand-child">
-            <u><h2>Our Mission</h2></u>
-            <p>Our mission is to provide valuable and informative content to our readers. Whether you're a tech enthusiast, a foodie, or someone interested in a wide range of topics, 
-              we strive to offer engaging articles that cater to diverse interests.</p>
-          </div>
-          <div class="grand-child">
-            <u><h2>What We Cover</h2></u>
-            <p>From technology trends and programming tips to travel adventures and lifestyle advice, our blog covers a wide spectrum of topics. 
-              We believe in making information accessible and enjoyable for everyone.</p>
-          </div>
-          <div class="grand-child">
-            <u><h2>What Sets Us Apart</h2></u>
-            <p>Our blog transcends boundaries, delving into diverse subjects that captivate our interests. From the latest tech innovations to the nuances of travel,
-              we strive to deliver captivating stories and insights that resonate with you.</p>
-          </div>
+  <div class="container">
+    <h1>Create a New Post</h1>
+    <textarea id="postContent" rows="4" cols="50" placeholder="What's on your mind..."></textarea>
+    <br>
+    <p id="no-content"></p>
+    <button onclick="publishPost()">Publish</button>
+  </div>
+  
+  <div id="about-us-container">
+    <h1>About us</h1><hr>
+    <div class="about-us-child">
+      <div class="grand-child">
+        <u><h2>Who We Are</h2></u>
+        <p>Welcome to Simple Blog! We are a passionate team of writers and enthusiasts dedicated to sharing knowledge and insights on a variety of topics.</p>
       </div>
+      <div class="grand-child">
+        <u><h2>Our Mission</h2></u>
+        <p>Our mission is to provide valuable and informative content to our readers. Whether you're a tech enthusiast, a foodie, or someone interested in a wide range of topics, we strive to offer engaging articles that cater to diverse interests.</p>
+      </div>
+      <div class="grand-child">
+        <u><h2>What We Cover</h2></u>
+        <p>From technology trends and programming tips to travel adventures and lifestyle advice, our blog covers a wide spectrum of topics. We believe in making information accessible and enjoyable for everyone.</p>
+      </div>
+      <div class="grand-child">
+        <u><h2>What Sets Us Apart</h2></u>
+        <p>Our blog transcends boundaries, delving into diverse subjects that captivate our interests. From the latest tech innovations to the nuances of travel, we strive to deliver captivating stories and insights that resonate with you.</p>
+      </div>
+    </div>
   </div><hr>
   <div class="social-media" id="social-media">
     <a href="https://www.linkedin.com/in/hemanth586/"><i class="fa-brands fa-linkedin"></i></a>
     <a href="https://www.instagram.com/_hemanth_virat_28?igshid=OGQ5ZDc2ODk2ZA== "><i class="fa-brands fa-instagram"></i></a>
     <a href="mailto:sahukarihemanth586@gmail.com"><i class="fa-solid fa-envelope"></i></a>
     <a href="https://youtube.com/@hemanth8336?si=3q8D3Gn-BeuOVpPh"><i class="fa-brands fa-youtube"></i></a>
-</div><hr>
+  </div><hr>
+
+  <script>
+     function toggleNav() {
+    var navLinks = document.querySelectorAll('nav a:not(:last-child)');
+    navLinks.forEach(link => {
+      link.style.display = (link.style.display === 'none' || getComputedStyle(link).display === 'none') ? 'block' : 'none';
+    });
+  }
+  </script>
   <script src="homepage.js"></script>
 </body>
 </html>
