@@ -31,15 +31,10 @@ body {
   color: black;
 }
 
-.desktop-links .logout {
-  background: linear-gradient(10deg, #F44776, #FE624E);
-  padding: 10px;
-  border-radius: 7px;
-}
-
-.desktop-links .logout:hover {
-  background-color: #561108;
+.desktop-links .access:hover {
+  background-color: #0e68ef;
   color: #fff;
+  border: none;
 }
 
 .mobile-links {
@@ -90,7 +85,6 @@ h1 {
   width: 90%;
   margin: auto;
   box-shadow: 0 0 4px grey;
-  background-color: #f7f1f1;
   border-radius: 10px;
   padding: 20px;
 }
@@ -131,9 +125,9 @@ h1 {
     display: block;
     cursor: pointer;
     position: fixed;
-    top: 30px;
+    top: 5px;
     right: 10px;
-    font-size: 30px;
+    font-size: 25px;
   }
   .desktop-links {
     display: none; 
@@ -161,10 +155,9 @@ h1 {
     background-color: #ddd;
     color: #333;
   }
-  .mobile-links .logout{
-    background: linear-gradient(10deg, #F44776, #FE624E);
-    padding: 10px;
-    border-radius: 7px;
+  .mobile-links .access:hover{
+    background-color: #0e68ef ;
+    color: #fff;
   }
   .container {
     max-width: 100%;
@@ -177,7 +170,6 @@ h1 {
     margin: 30px auto;
     margin-bottom: 50px;
     box-shadow: 0 0 4px grey;
-    background-color: #f7f7e8;
     border-radius: 10px;
     padding: 10px;
     color: #000;
