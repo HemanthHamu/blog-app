@@ -25,6 +25,7 @@ const OtpModel = mongoose.model('Users', {
     email: String,
     password:String,
     otp: Number,
+    registerationDate:{type:Date,default:Date.now}
 });
 
 // Nodemailer setup
