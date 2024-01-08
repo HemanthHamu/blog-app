@@ -17,7 +17,17 @@ const connectionParams={
     useNewUrlParser: true,
     useUnifiedTopology: true 
 }
-
+mongoose.connect(dburl, connectionParams)
+        .then(() => {
+            console.log('Connected to the database');
+            // Start the server after the database connection is established
+            app.listen(port, () => {
+                console.log(`Server running at http://localhost:${port}`);
+            });
+        })
+        .catch((err) => {
+            console.error('Error connecting to the database:', err);
+        });
 // Mongoose model for the users collection
 const OtpModel = mongoose.model('Users', {
     email: String,
@@ -40,17 +50,6 @@ transporter.verify(function (error, success) {
         console.error('Nodemailer verification failed:', error);
     } else {
         console.log('Nodemailer connection successful');
-        mongoose.connect(dburl, connectionParams)
-        .then(() => {
-            console.log('Connected to the database');
-            // Start the server after the database connection is established
-            app.listen(port, () => {
-                console.log(`Server running at http://localhost:${port}`);
-            });
-        })
-        .catch((err) => {
-            console.error('Error connecting to the database:', err);
-        });
     }
 });
 
@@ -177,3 +176,7 @@ app.use((req, res) => {
     res.status(404).send('Page not found');
 });
 
+// Start the server at port 3013 
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
