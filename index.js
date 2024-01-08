@@ -9,8 +9,6 @@ require('dotenv').config();
 
 
 const dburl = process.env.DB_URL;
-
-
 const connectionParams={
     useNewUrlParser: true,
     useUnifiedTopology: true 
