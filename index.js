@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 const app = express();
 const bcrypt = require('bcrypt')
-const port = 3013;
+const port = 3014;
 const path = require('path');
 require('dotenv').config();
 
@@ -176,7 +176,7 @@ app.use((req, res) => {
     res.status(404).send('Page not found');
 });
 
-// Start the server at port 3013 
+// Start the server at port 3014 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
