@@ -9,6 +9,10 @@ require('dotenv').config();
 
 
 const dburl = process.env.DB_URL;
+if (!dburl) {
+    console.error('Error: MongoDB connection string (DB_URL) is not defined.');
+    process.exit(1); // Exit the process if there's an error
+}
 const connectionParams={
     useNewUrlParser: true,
     useUnifiedTopology: true 
