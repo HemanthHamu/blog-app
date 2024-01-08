@@ -6,7 +6,8 @@ const bcrypt = require('bcrypt')
 const port = 3013;
 const path = require('path');
 
-const dburl = "mongodb+srv://Hemanth:Hamu100@cluster0.s2yji1u.mongodb.net/firstDatabase?retryWrites=true&w=majority";
+const dburl = process.env.DB_URL;
+
 
 const connectionParams={
     useNewUrlParser: true,
