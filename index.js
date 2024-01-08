@@ -5,6 +5,8 @@ const app = express();
 const bcrypt = require('bcrypt')
 const port = 3013;
 const path = require('path');
+require('dotenv').config();
+
 
 const dburl = process.env.DB_URL;
 
