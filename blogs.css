@@ -17,6 +17,7 @@ body {
   background-color: #333;
   color: #fff;
   padding: 10px;
+  transition: 0.5s;
 }
 
 .desktop-links a {
@@ -29,6 +30,8 @@ body {
 .desktop-links a:hover {
   background-color: #ddd;
   color: black;
+  transition: 0.5s;
+  border-radius: 10px;
 }
 
 .desktop-links .access:hover {
