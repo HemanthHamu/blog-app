@@ -30,6 +30,7 @@ mongoose.connect(dburl, connectionParams)
         });
 // Mongoose model for the users collection
 const OtpModel = mongoose.model('Users', {
+    name:String,
     email: String,
     password:String,
     otp: Number,
@@ -72,7 +73,7 @@ app.get('/', (req, res) => {
  });
 
  app.post('/submit', async (req, res) => {
-    const {email,password,confirmpassword} = req.body;
+    const {name,email,password,confirmpassword} = req.body;
     try {
         await transporter.verify()
          // this existingUser variable checks whether the entered mail is already registered in database or not
@@ -98,7 +99,7 @@ app.get('/', (req, res) => {
             from: 'hemanthenquiries@gmail.com',
             to: email,
             subject: 'OTP for Registration',
-            text: `Your OTP for creating a blog account is: ${otp}`,
+            text: `Hello ${name}😀\nYour OTP for creating a blog account is: ${otp}`,
         };
         await OtpModel.findOneAndUpdate({ email }, { email, password,otp }, { upsert: true });
         console.log('OTP stored successfully:', otp);
